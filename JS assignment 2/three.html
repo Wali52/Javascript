@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rules for naming JS variables</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: #f7f7f8;
+            color: #111;
+            padding: 40px;
+        }
+
+        .card {
+            max-width: 760px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(20, 20, 30, 0.06);
+            padding: 28px;
+        }
+
+        h1 {
+            margin: 0 0 18px 0;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .blank {
+            font-weight: 700;
+            text-decoration: underline;
+            padding: 2px 6px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #fff6ea, #eef7ff);
+        }
+
+        code.example {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: #f3f4f6;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <h1>Rules for naming JS variables</h1>
+
+        <p><strong>a)</strong> A heading stating “Rules for naming JS variables” — done (above).</p>
+
+        <p><strong>b)</strong> Variable names can only contain <span class="blank">letters</span>, <span
+                class="blank">digits</span>, <span class="blank">underscores</span> and <span class="blank">dollar
+                signs</span>.<br>
+            For example: <code class="example">$my_1stVariable</code></p>
+
+        <p><strong>c)</strong> Variables must begin with a <span class="blank">letter</span>, <span
+                class="blank">underscore</span> or <span class="blank">dollar sign</span>.<br>
+            For example: <code class="example">$name</code>, <code class="example">_name</code> or <code
+                class="example">name</code></p>
+
+        <p><strong>d)</strong> Variable names are case <span class="blank">sensitive</span>.</p>
+
+        <p><strong>e)</strong> Variable names should not be JS <span class="blank">keywords</span>.</p>
+
+        <hr>
+    </main>
+</body>
+
+</html>
