@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events Tasks</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!--q1-->
+<h2>Q1: Alert on Click</h2>
+<a href="#" id="alertLink">Click me</a>
+
+<!--q2-->
+<h2>Q2: Mobile Images with Alert</h2>
+<img src="https://via.placeholder.com/100?text=Mobile1" alt="Mobile1" onclick="showMobileAlert('Mobile1')" />
+<img src="https://via.placeholder.com/100?text=Mobile2" alt="Mobile2" onclick="showMobileAlert('Mobile2')" />
+<img src="https://via.placeholder.com/100?text=Mobile3" alt="Mobile3" onclick="showMobileAlert('Mobile3')" />
+
+<!--q3-->
+<h2>Q3: Student Table with Delete</h2>
+<table id="studentTable">
+    <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<!--q4-->
+<h2>Q4: Image Mouseover Change</h2>
+<img id="hoverImage" src="https://via.placeholder.com/150?text=Image1" alt="Image" />
+
+<!--q5-->
+<h2>Q5: Counter</h2>
+<p>Counter: <span id="counterValue">0</span></p>
+<button onclick="increaseCounter()">Increase</button>
+<button onclick="decreaseCounter()">Decrease</button>
+
+<script>
+//q1
+document.getElementById("alertLink").onclick = function() {
+    alert("You clicked the link!");
+};
+
+//q2
+function showMobileAlert(name) {
+    alert("You clicked on " + name);
+}
+
+//q3
+let students = [
+    {name: "Ali", roll: 1},
+    {name: "Sara", roll: 2},
+    {name: "Mark", roll: 3},
+    {name: "John", roll: 4},
+    {name: "Aisha", roll: 5},
+    {name: "Zain", roll: 6},
+    {name: "Hina", roll: 7},
+    {name: "Omar", roll: 8},
+    {name: "Lara", roll: 9},
+    {name: "Usman", roll: 10},
+];
+
+let table = document.getElementById("studentTable");
+
+students.forEach(student => {
+    let row = table.insertRow();
+    row.insertCell(0).innerText = student.name;
+    row.insertCell(1).innerText = student.roll;
+    let actionCell = row.insertCell(2);
+    let btn = document.createElement("button");
+    btn.innerText = "Delete";
+    btn.onclick = function() {
+        table.deleteRow(row.rowIndex);
+    };
+    actionCell.appendChild(btn);
+});
+
+//q4
+let hoverImage = document.getElementById("hoverImage");
+hoverImage.onmouseover = function() {
+    hoverImage.src = "https://via.placeholder.com/150?text=Image2";
+};
+hoverImage.onmouseout = function() {
+    hoverImage.src = "https://via.placeholder.com/150?text=Image1";
+};
+
+//q5
+let counter = 0;
+function increaseCounter() {
+    counter++;
+    document.getElementById("counterValue").innerText = counter;
+}
+function decreaseCounter() {
+    counter--;
+    document.getElementById("counterValue").innerText = counter;
+}
+</script>
+
+</body>
+</html>
